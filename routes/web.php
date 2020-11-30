@@ -14,12 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('catalogo');
+    return view('index');
 });
 
 
 Route::get('prom', function () {
     return view('prom');
+});
+
+Route::get('catalogoCC', function () {
+    $categoriass = DB::select('SELECT * FROM categoriass');
+    return view('catalogoCC', compact('categoriass') );
 });
 
 Route::get('comentarios', function () {

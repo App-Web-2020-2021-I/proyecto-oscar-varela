@@ -6,9 +6,9 @@
         <h1>Bienvenido!!</h1>
              <div class="row px-4 py-4">
                 
-               <a href="producto" class="col-3 col-md-4"> <img class="w-100" src="./imagen/bicicletaA.jpg"></a>
-               <a href="producto" class="col-5 col-md-4"> <img class="w-100" src="./imagen/bicicletaA.jpg"></a>
-               <a href="producto" class="col-3 col-md-4"> <img class="w-100" src="./imagen/bicicletaA.jpg"></a>
+               <a href="producto" class="col-3 col-md-4"> <img class="w-100" src="imag/bicicletaA.jpg"></a>
+               <a href="producto" class="col-5 col-md-4"> <img class="w-100" src="imag/bicicletaA.jpg"></a>
+               <a href="producto" class="col-3 col-md-4"> <img class="w-100" src="imag/bicicletaA.jpg"></a>
                
              </div>
 

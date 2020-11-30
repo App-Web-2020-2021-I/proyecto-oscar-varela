@@ -12,15 +12,16 @@
 
 <body >
  <div class="bg-danger collapse" id="men">
-        <a href="index.blade.php"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
-        <a href="catalogo">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
+        <a href="/"> <li class="list-group-item list-group-item-action">Initio</li> </a>
+        <a href="categorias">  <li class="list-group-item list-group-item-action">Catalogo-ADMID</li> </a>
+        <a href="catalogoCC">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
          <a href="prom">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
     </div>
 
     <div class="bg-success row">
         <div class="col-6 py-3">
             <div class="d-inline-block" id="logo">
-                <img src="./imagen/logo.png" alt="Logo" class="img-fluid">
+                <img src="imag/logo.png" alt="Logo" class="img-fluid">
             </div>
             <div class="d-none d-md-inline-block text-white h2">
                 bicicletas para ti
@@ -28,14 +29,15 @@
         </div>
             
         <div class="d-md-none d-block">
-            <button class="btn" data-toggle="collapse" data-target="#men"> <img src="./imagen/menu.png" alt="Logo" class="w-50"> </button>
+            <button class="btn" data-toggle="collapse" data-target="#men"> <img src="imag/menu.png" alt="Menu" class="w-50"> </button>
          </div>
         
-        <div class="d-none d-md-block col-3 p-2">
+        <div class="d-none d-md-block col-4 p-2">
             <div class="mt-2">
                 <ul class="list-group list-group-horizontal text-center">
-                   <a href="categorias"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
-                   <a href="/">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
+                   <a href="/"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
+                   <a href="categorias">  <li class="list-group-item list-group-item-action">Catalogo-ADMIN</li> </a>
+                   <a href="catalogoCC">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
                     <a href="prom">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
                 </ul>
             </div>
@@ -61,9 +63,9 @@
     <div class="bg-success  row text-white ">
         <div class="col-4 my-3" id="redes">
 
-            <img src="./imagen/facebook.png">
-            <img src="./imagen/instagram.png">
-            <img src="./imagen/whatsapp.png">
+            <img src="imag/facebook.png">
+            <img src="imag/instagram.png">
+            <img src="imag/whatsapp.png">
 
             
         </div>
@@ -72,7 +74,7 @@
         </div>
 
         <div>
-            <a href="carrito" class="col-5 col-md-4"> <img class="w-50" src="./imagen/carrito.png"></a>
+            <a href="carrito" class="col-5 col-md-4"> <img class="w-50" src="imag/carrito.png"></a>
             
         </div>
     </div>

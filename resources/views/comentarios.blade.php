@@ -5,7 +5,7 @@
 
     <div class="row">
              <div class="col-2">
-                <a href="javascript: history.go(-1)"><img class="w-75 p-md-4" src="./imagen/flecha.png"></a>
+                <a href="javascript: history.go(-1)"><img class="w-75 p-md-4" src="imag/flecha.png"></a>
              </div>
    
              <div class="text-center col-8 m-4 border">
@@ -40,29 +40,4 @@
              <div class="col-2"></div>
    </div>
 
-
-
-    
-    <!--d-none d-md-block-->
-    <!--d-none d-md-block-->
-    <div class="bg-success  row text-white ">
-        <div class="col-4 my-3" id="redes">
-
-            <img src="./imagen/facebook.png">
-            <img src="./imagen/instagram.png">
-            <img src="./imagen/whatsapp.png">
-
-            
-        </div>
-        <div class="col-4 text-right my-3">
-            Conectate con nosotros
-        </div>
-
-        <div>
-            <a href="carrito.html" class="col-5 col-md-4"> <img class="w-50" src="./imagen/carrito.png"></a>
-            
-        </div>
-    </div>
-
-    
 @endsection
