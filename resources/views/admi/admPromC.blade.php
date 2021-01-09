@@ -21,7 +21,7 @@
   
 
   
-<form action="/categorias" class="form-row p-2" method="POST" enctype="multipart/form-data">
+<form action="/promociones" class="form-row p-2" method="POST" enctype="multipart/form-data">
     @csrf
     @method('POST')
 
@@ -31,20 +31,13 @@
     </div>
 
     <div class="form-group col-9">
-        <label for="descripcion">descripcion</label>
+        <label for="descripcion">descripcion de la promocion</label>
         <input type="text" name="descripcion" class="form-control">
     </div>
 
     <div class="form-group col-4">
-        <label for="categoria">categoria</label>
-        <select name="categoria" class="form-control">
-              <option value="1">Deportiva</option>
-              <option value="2">Antigua</option>
-              <option value="3">Moderna</option>
-              <option value="4">Niños</option>
-              <option value="5">Otros</option>
-        </select>
-
+        <label for="fin">Fin de la promocion</label>
+        <input type="date" name="fin" class="form-control">
     </div>
 
     <div class="form-group col-4">

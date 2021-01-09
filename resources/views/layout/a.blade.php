@@ -19,7 +19,12 @@
             <div class="d-none d-md-inline-block text-white h2">
                 Bicicletas para ti
             </div>
-        </div>  
+        </div> 
+        
+        
+    
+
+    
             
         <div class="d-md-none d-block">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#men"> <img src="imag/menu.png" alt="Menu" class="w-50"> </button>
@@ -27,35 +32,16 @@
         
         <div class="d-none d-md-block col-7 p-2">
             <div class="mt-2">
-                <ul class="list-group list-group-horizontal text-center">
-                <a href="http://127.0.0.1:8000/"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
-                
-                @guest
+            @guest
     
     @if (Route::has('register'))
-    
-    <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-    <a href="http://127.0.0.1:8000/catalogoU">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
      @endif
         @else
-        @if (Route::has('register'))
-           @if ( Auth::user()->tipo == 0)
-        <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
-        
-        <a href="http://127.0.0.1:8000/promociones">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-        <a href="http://127.0.0.1:8000/carritos">  <li class="list-group-item list-group-item-action">Carritos</li> </a>
-        <a href="http://127.0.0.1:8000/usuarioss">  <li class="list-group-item list-group-item-action">Usuarios</li> </a>
-           @endif 
-           @if ( Auth::user()->tipo == 1)
-           <a href="http://127.0.0.1:8000/catalogo-UC">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
-           <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-            @endif 
-         @endif       
-  @endguest  
-           </ul>
-                   
-                   
-                   
+  @endguest    <ul class="list-group list-group-horizontal text-center">
+                   <a href="http://127.0.0.1:8000/"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
+                   <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo-ADMIN</li> </a>
+                   <a href="http://127.0.0.1:8000/promociones">  <li class="list-group-item list-group-item-action">Promociones admin</li> </a>
+                </ul>
             </div>
         </div>
 
@@ -100,27 +86,13 @@
                 </div>
             </div>
           
-            <div class="collapse navbar-collapse d-md-none" id="men">
-            <a href="http://127.0.0.1:8000/"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
-                
-                @guest
-    
-    @if (Route::has('register'))
-    <a href="http://127.0.0.1:8000/catalogo-UC">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
-    <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-     @endif
-        @else
-        @if (Route::has('register'))
-           @if ( Auth::user()->tipo == 0)
-        <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
-        <a href="http://127.0.0.1:8000/promociones">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-           @endif 
-           @if ( Auth::user()->tipo == 1)
-        <a href="http://127.0.0.1:8000/catalogoU">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
-        <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-            @endif 
-         @endif       
-  @endguest  
+            <div class="collapse navbar-collapse" id="men">
+                  <a href="http://127.0.0.1:8000/"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
+                   <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo-ADMIN</li> </a>
+                   <a href="http://127.0.0.1:8000/catalogo-UC">  <li class="list-group-item list-group-item-action">CatalogoCl</li> </a>
+                   <a href="http://127.0.0.1:8000/catalogoU">  <li class="list-group-item list-group-item-action">CatalogoUs</li> </a>
+                   <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
+                   <a href="http://127.0.0.1:8000/promociones">  <li class="list-group-item list-group-item-action">Promociones admin</li> </a>
     </div>
 @yield('content')
 
@@ -138,21 +110,10 @@
             Conectate con nosotros
         </div>
 
-
-        @guest
-    
-    @if (Route::has('register'))
-      @endif
-        @else
-        @if (Route::has('register'))
-           @if ( Auth::user()->tipo == 1)
-           <div>
-            <a href="http://127.0.0.1:8000/carrito" class="col-5 col-md-4"> <img class="w-50" src="/imag/carrito.png"></a>   
-           </div>
-         @endif 
-         @endif       
-  @endguest  
-        
+        <div>
+            <a href="carrito" class="col-5 col-md-4"> <img class="w-50" src="/imag/carrito.png"></a>
+            
+        </div>
     </div>
 
 
