@@ -12,17 +12,17 @@
 
 <body >
 <div class="bg-success row">
-        <div class="col-3 py-2">
-            <div class="d-inline-block" id="logo">
-                <img src="/imag/logo.png" alt="Logo" class="img-fluid">
+        <div class="col-3 pl-4">
+            <div class="d-inline-block p-2" id="logo">
+                <img src="/imag/logo.png" alt="Logo" class="img-fluid ">
             </div>
-            <div class="d-none d-md-inline-block text-white h2">
+            <div class="d-none d-md-inline-block text-white h2 p-4">
                 Bicicletas para ti
             </div>
         </div>  
             
         <div class="d-md-none d-block">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#men"> <img src="imag/menu.png" alt="Menu" class="w-50"> </button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#men"> <img src="/imag/menu.png" alt="Menu" class="w-50"> </button>
          </div>
         
         <div class="d-none d-md-block col-7 p-2">
@@ -41,9 +41,8 @@
         @if (Route::has('register'))
            @if ( Auth::user()->tipo == 0)
         <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
-        
         <a href="http://127.0.0.1:8000/promociones">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
-        <a href="http://127.0.0.1:8000/carritos">  <li class="list-group-item list-group-item-action">Carritos</li> </a>
+        <a href="http://127.0.0.1:8000/carritos">  <li class="list-group-item list-group-item-action">Pedidos</li> </a>
         <a href="http://127.0.0.1:8000/usuarioss">  <li class="list-group-item list-group-item-action">Usuarios</li> </a>
            @endif 
            @if ( Auth::user()->tipo == 1)
@@ -51,7 +50,7 @@
            <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
             @endif 
          @endif       
-  @endguest  
+                @endguest  
            </ul>
                    
                    
@@ -101,19 +100,21 @@
             </div>
           
             <div class="collapse navbar-collapse d-md-none" id="men">
-            <a href="http://127.0.0.1:8000/"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
+            <a href="http://127.0.0.1:8000/carrito/iniciar"> <li class="list-group-item list-group-item-action">Inicio</li> </a>
                 
                 @guest
     
     @if (Route::has('register'))
-    <a href="http://127.0.0.1:8000/catalogo-UC">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
+    <a href="http://127.0.0.1:8000/catalogoU">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
     <a href="http://127.0.0.1:8000/Promos-UC">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
      @endif
         @else
         @if (Route::has('register'))
            @if ( Auth::user()->tipo == 0)
-        <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
+           <a href="http://127.0.0.1:8000/categorias">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
         <a href="http://127.0.0.1:8000/promociones">  <li class="list-group-item list-group-item-action">Promociones</li> </a>
+        <a href="http://127.0.0.1:8000/carritos">  <li class="list-group-item list-group-item-action">Pedidos</li> </a>
+        <a href="http://127.0.0.1:8000/usuarioss">  <li class="list-group-item list-group-item-action">Usuarios</li> </a>
            @endif 
            @if ( Auth::user()->tipo == 1)
         <a href="http://127.0.0.1:8000/catalogoU">  <li class="list-group-item list-group-item-action">Catalogo</li> </a>
@@ -124,9 +125,14 @@
     </div>
 @yield('content')
 
+<div class="m-5">
+   <h6 class="m-5">.</h6>
+   
+</div>
 
-<div class="bg-success  row text-white ">
-        <div class="col-4 my-3" id="redes">
+
+<div class="bg-success  row text-white fixed-bottom">
+        <div class="col-4 my-3 mx-2" id="redes">
 
             <img src="/imag/facebook.png">
             <img src="/imag/instagram.png">
@@ -134,7 +140,7 @@
 
             
         </div>
-        <div class="col-4 text-right my-3">
+        <div class="col-3 text-right my-3">
             Conectate con nosotros
         </div>
 
@@ -147,7 +153,7 @@
         @if (Route::has('register'))
            @if ( Auth::user()->tipo == 1)
            <div>
-            <a href="http://127.0.0.1:8000/carrito" class="col-5 col-md-4"> <img class="w-50" src="/imag/carrito.png"></a>   
+            <a href="http://127.0.0.1:8000/carrito/agregar/0/0" class="col-2 col-md-4"> <img class="w-50" src="/imag/carrito.png"></a>   
            </div>
          @endif 
          @endif       

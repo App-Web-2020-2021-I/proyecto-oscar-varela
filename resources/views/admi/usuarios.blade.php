@@ -14,7 +14,7 @@
 
 @section('content')
 
-    <h1>Clientes</h1>
+    <h2 class="p-3">Clientes</h2>
 
     <div>
               
@@ -22,7 +22,7 @@
              
              @foreach($usuarios as $ite) 
                
-                <div class="categoria-item col-12 col-md-2">
+                <div class="categoria-item col-12 col-md-2 pb-2">
                     <div class="card">
                         <div class="card-body">
                             <div class="card-title">

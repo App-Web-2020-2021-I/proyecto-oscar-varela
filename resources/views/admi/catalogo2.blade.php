@@ -25,7 +25,7 @@
                   categorias
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <a href="http://127.0.0.1:8000/catalogo2/1"><button class="dropdown-item" type="button">Deportiva</button></a>
+                <a href="http://127.0.0.1:8000/catalogo2/1"><button class="dropdown-item" type="button">Deportiva</button></a>
                   <a href="http://127.0.0.1:8000/catalogo2/2"><button class="dropdown-item" type="button">Antigua</button></a>
                   <a href="http://127.0.0.1:8000/catalogo2/3"><button class="dropdown-item" type="button">Moderna</button></a>
                   <a href="http://127.0.0.1:8000/catalogo2/4"><button class="dropdown-item" type="button">Niños</button></a>
@@ -33,7 +33,7 @@
                 </div>
                </div>
                <div class="col-3"> 
-               <a href=" categorias/create" class="bg-white"> <button class="btn btn-outline-dark bg-info col-12" type="submit" >Agregar</button></a>
+               <a href="http://127.0.0.1:8000/categorias/create" class="bg-white"> <button class="btn btn-outline-dark bg-info col-12" type="submit" >Agregar</button></a>
                </div>
               
               </div>
@@ -43,7 +43,7 @@
              <div class="row px-2 py-2">
              <div class="categoria-items row p-3 col-12">
              @foreach($categoriass as $item) 
-             
+             @if($item->categ == $cate)
                 <div class="categoria-item col-12 col-md-4 pb-2">
                     <div class="card">
                     <a href="categorias/{{$item->id}}"><img class="w-100 " src="/{{$item->path}}"></a>
@@ -55,7 +55,7 @@
                                 <i class="fas fa-thumbs-up"></i>
                                 <p> costo  $<a>{{$item->precio}}</a> </p>
                               
-                                <a href="categorias/{{$item->id}}/edit"> <button class="btn btn-outline-dark bg-dark text-light" type="bottom">editar</button> </a>
+                                <a href="http://127.0.0.1:8000/categorias/{{$item->id}}/edit"> <button class="btn btn-outline-dark bg-dark text-light" type="bottom">editar</button> </a>
 
               
                <form action="/categorias/{{$item->id}}" method="POST"> 
@@ -67,6 +67,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
              </div>
 

@@ -14,7 +14,7 @@
 
 @section('content')
 
-    <h1>Pedidos</h1>
+    <h2 class="p-3">Pedidos</h2>
 
     <div>
               
@@ -31,9 +31,10 @@
                        <img class="w-100" src="/{{$ithem->path}}">
                         <div class="card-body">
                             <div class="card-title">
-                                <li> Nombre:{{$ite->name}}       </li>
-                                <li> Correo:{{$ite->email}}</li>
-                                <li> Producto:{{$ithem->nomBici}}</li>
+                                <li> Nombre: {{$ite->name}}       </li>
+                                <li> Correo: {{$ite->email}}</li>
+                                <li> Producto: {{$ithem->nomBici}}</li>
+                                <li> Cantidad: {{$item->cantidad}}</li>
                             </div>
                             <div class="card-text">
                             <form action="/carrito/{{$item->id}}" method="POST"> 

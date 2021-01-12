@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class UsuariosController extends Controller
 {
@@ -69,6 +70,13 @@ class UsuariosController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $item = User::find(0);
+        
+        $item->tipo = 0;
+       
+        $respuesta = $item->save();
+        
+        return redirect()->route('/');
     }
 
     /**

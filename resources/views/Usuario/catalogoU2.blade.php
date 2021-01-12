@@ -30,10 +30,12 @@
              <div class="row px-2 py-2">
              <div class="categoria-items row col-12">
              @foreach($categoriass as $item) 
-             
+             @if($item->categ == $cate)
+
+
                 <div class="categoria-item col-12 col-md-4 pb-2">
                     <div class="card">
-                    <a href="http://127.0.0.1:8000/promd/{{$item->id}}"><img class="w-100" src="/{{$item->path}}"></a>
+                    <a href="http://127.0.0.1:8000/promd/{{$item->id}}"><img class="w-100 " src="/{{$item->path}}"></a>
                         <div class="card-body">
                             <div class="card-title">
                             <a>{{$item->nomBici}}</a>
@@ -45,8 +47,11 @@
                         </div>
                     </div>
                 </div>
+
+             
+                @endif
                 @endforeach
-             </div>
+              </div> 
 
 
              </div>  

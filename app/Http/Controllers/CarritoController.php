@@ -18,9 +18,8 @@ class CarritoController extends Controller
     public function index()
     {
         //
-        $carrito = Carrito::all();
-        $producto = Categoria::all();
-        return view('cliente/carrito', compact('carrito','producto'));
+        
+        return redirect("http://127.0.0.1:8000/carritos");
 
     }
 
@@ -48,9 +47,11 @@ class CarritoController extends Controller
   
         $item->idU = $request->idU;
         $item->idP = $request->idP;
+        $item->cantidad = $request->cantidad;
+        $i = $request->idP;
         
         $item->save();
-        return redirect()->route('carrito.index');
+        return redirect("http://127.0.0.1:8000/carrito/agregar/$i/0");
     }
 
     /**

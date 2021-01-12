@@ -13,8 +13,6 @@
   @endguest 
 
 @section('content')
-
-
 <!--contenido -->
     <div>
         <div >
@@ -41,6 +39,8 @@
              <div class="row px-2 py-2">
              <div class="categoria-items row col-12">
              @foreach($categoriass as $item) 
+
+             @if($item->categ == $cate)
              
                 <div class="categoria-item col-12 col-md-4 pb-2">
                     <div class="card">
@@ -52,8 +52,8 @@
                             <div class="card-text">
                                 <i class="fas fa-thumbs-up"></i>
                                 <p> costo  $<a>{{$item->precio}}</a> </p>
-                               
-                                <a href="carrito/agregar/{{$item->id}}/1"><button class="btn btn-outline-dark bg-success text-light" type="submit">Agregar</button></a>
+               
+               <a href="carrito/agregar/{{$item->id}}/1"><button class="btn btn-outline-dark bg-success text-light" type="submit">Agregar</button></a>
                
                <!-- <form action="/carrito" class="form-row p-2" method="POST"> 
                 @csrf
@@ -73,6 +73,7 @@
                         </div>
                     </div>
                 </div>
+                @endif
                 @endforeach
              </div>
 
