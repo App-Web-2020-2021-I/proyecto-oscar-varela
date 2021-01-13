@@ -143,7 +143,7 @@ Route::get('carrito/agregar/{id}/{cant}', function (Request $request, $id, $cant
         $nuevo_carrito[] = $objeto;
        // $car[]=$ca; 
     }
-
+    
     $request->session()->put('carrito' , $nuevo_carrito);
     $carritos = Carrito::all();
     $producto = Categoria::all();
@@ -167,6 +167,7 @@ Route::get('carrito/eliminar/{id}/{cant}', function (Request $request, $id,$cant
            if($cant == -1)
             {
                 $item["id"] = 0;
+                $item["cant"] = 0;
             }
         }
        $nuevo_carrito[] = $item;
@@ -179,6 +180,33 @@ Route::get('carrito/eliminar/{id}/{cant}', function (Request $request, $id,$cant
       $car = session('carrito');
     return view('cliente/carrito', compact('carritos','producto','car'));
 });
+
+
+
+Route::get('carrito/eliminar2/{id}/{cant}', function (Request $request, $id,$cant) {
+    $carrito=session('carrito');
+
+    foreach($carrito as $item){
+        if($item["cant"] > 0)
+        {if($item["id"] > 0)
+            {       $ithem = new Carrito;
+                $ithem->idU = $id;
+                $ithem->idP = $item["id"];
+                $ithem->cantidad = $item["cant"];
+                $ithem->save();
+                $item["cant"] = 0;
+              }}
+              $nuevo_carrito[] = $item;
+       
+    }
+    $request->session()->put('carrito' , $nuevo_carrito);
+    $carritos = Carrito::all();
+    $producto = Categoria::all();
+    //return session()->all();
+      $car = session('carrito');
+    return view('cliente/carrito', compact('carritos','producto','car'));
+});
+
 
 Route::resource('categorias', 'CategoriasController');
 Route::resource('promociones', 'PromocionesController'); 

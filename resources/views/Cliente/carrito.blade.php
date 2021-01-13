@@ -14,18 +14,24 @@
 
 @section('content')
 
-    <h2 class="p-3 ">Mi carrito</h2>
-
-    <div>
+  
     <?php 
+    $l = 0;
 $id2 = [];
 $cant = [];
 foreach($car as $item){
     $id2[] =  $item["id"];
     $cant2[] =  $item["cant"];
+    $l += $item["cant"];
 }    $in=0;
     ?>
 
+<div class="row p-3">  <h2 class="p-1 col-3 ">Mi carrito</h2>
+   @if($l != 0 )
+   <a href="/carrito/eliminar2/{{Auth::user()->id}}/0"><button class="btn btn-outline-dark bg-success text-light" type="submit">Comprar</button></a>
+   @endif
+</div>
+    <div>
             
              <div class="categoria-items row col-12 p-2">
              
@@ -50,7 +56,7 @@ foreach($car as $item){
                             @endif 
 
                             @if($cant2[$in] != 0)
-                              <form action="/carrito" class="form-row p-2" method="POST"> 
+         <!--<form action="/carrito" class="form-row p-2" method="POST"> 
                 @csrf
                 @method('POST')
                 <div><button class="btn btn-outline-dark bg-success text-light" type="submit">Comprar</button></div>
@@ -67,9 +73,10 @@ foreach($car as $item){
                      <div class="form-group none">
                           <input type="number" name="cantidad" class="form-control d-none d-md-none" value="{{$cant2[$in]}}">
                      </div>
-               </form> @endif
+            </form> -->@endif
                         
                          <a href="/carrito/eliminar/{{$ithem->id}}/-1"><button class="btn btn-outline-dark bg-secondary text-light" type="submit">Eliminar</button></a>
+                         
                               
                             </div>
                         </div>

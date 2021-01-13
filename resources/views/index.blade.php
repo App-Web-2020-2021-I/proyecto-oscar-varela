@@ -34,7 +34,21 @@
 
 
              <div class="row px-5 py-5">
-                <a href="http://127.0.0.1:8000/catalogoU" class="col-12"> <button class="col-12">Catalogo</button> </a>   
+             @guest
+         @if (Route::has('register'))
+              <a href="http://127.0.0.1:8000/catalogoU" class="col-12"> <button class="col-12">Catalogo</button> </a>
+          @endif
+            @else
+           @if (Route::has('register'))
+           @if ( Auth::user()->tipo == 0)
+           <a href="http://127.0.0.1:8000/categorias" class="col-12"> <button class="col-12">Catalogo</button> </a>
+            @endif 
+            @if ( Auth::user()->tipo == 1)
+           <a href="http://127.0.0.1:8000/catalogo-UC" class="col-12"> <button class="col-12">Catalogo</button> </a>
+            @endif 
+         @endif       
+  @endguest 
+                   
              </div>
               
              <div class="text-center">
